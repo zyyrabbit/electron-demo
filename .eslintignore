@@ -1,0 +1,9 @@
+test/unit/coverage/**
+test/unit/*.js
+test/e2e/*.js
+additional/windows/stderr.out
+additional/windows/stdout.out
+additional/windows/config.ini
+additional/windows/logs/sync-tool-client.log
+.vscode
+

@@ -1,0 +1,9 @@
+{
+  "name": "demo",
+  "version": "2.0.1",
+  "author": "xxxxxx",
+  "license": "ISC",
+  "description": "桌面客户端模板",
+  "main": "./dist/main.js",
+  "dependencies": {}
+}

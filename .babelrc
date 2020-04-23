@@ -1,0 +1,25 @@
+{
+  "comments": false,
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": { "electron": "5" }
+    }]
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    [
+      "@babel/plugin-syntax-dynamic-import", 
+      { 
+        "loose": true 
+      }
+    ],
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-private-methods",
+    "@babel/plugin-proposal-export-default-from",
+  ]
+}

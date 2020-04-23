@@ -1,0 +1,16 @@
+{
+  "code": 0,
+  "data": {
+    "softwareVersionId": 170,
+    "forceUpdate": #FORCE#,
+    "versionName": "#APP_VERSION#",
+    "versionDesc": "#DESC#",
+    "fileName": "#SETUP#",
+    "filePath": "#HOST##SETUP#",
+    "md5": "#MD5#",
+    "sha256": "#SHA256#",
+    "dependentSysVersions": null,
+    "sysVersions": null,
+    "isAdminRightsRequired": true
+  }
+}
