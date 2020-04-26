@@ -22,8 +22,7 @@
     "pack:main": "cross-env NODE_ENV=production webpack --progress --colors --config script/webpack.main.config.js",
     "pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config script/webpack.renderer.config.js",
     "test": "npm run unit && npm run e2e",
-    "unit": "karma start test/unit/karma.conf.js",
-    "postinstall": "npm run lint:fix"
+    "unit": "karma start test/unit/karma.conf.js"
   },
   "dependencies": {
     "axios": "^0.19.0",
