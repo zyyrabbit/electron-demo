@@ -4,7 +4,7 @@ const path = require('path')
 const webpack = require('webpack')
 
 const devMode = process.env.NODE_ENV !== 'production'
-const region = process.env.APP_REGION || 'guangzhou'
+const region = process.env.APP_REGION || 'demo'
 const host = 'localhost'
 const port = 9080
 const EnvInfo = require(`../app/${region}/env`)

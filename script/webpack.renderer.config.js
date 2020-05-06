@@ -12,7 +12,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 
-const region = process.env.APP_REGION || 'guangzhou'
+const region = process.env.APP_REGION || 'demo'
 const EnvInfo = require(`../app/${region}/env`)
 
 const rendererConfig = merge(baseConfig, {
