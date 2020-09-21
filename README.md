@@ -1,28 +1,15 @@
-# electron-vue
+# electron-demo
 
-> An electron-vue project
+> electron 模板工程
 
-#### Build Setup
+#### 构建步骤
 
 ``` bash
-# install dependencies
-npm install
 
-# serve with hot reload at localhost:9080
-npm run dev
+# 开发命令 localhost:9080
+npm run dev:demo
 
-# build electron application for production
-npm run build
-
-# run unit & end-to-end tests
-npm test
-
-
-# lint all JS/Vue component files in `src/`
-npm run lint
+# 打包命令
+npm run build:demo
 
 ```
-
----
-
-This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue)@[45a3e22](https://github.com/SimulatedGREG/electron-vue/tree/45a3e224e7bb8fc71909021ccfdcfec0f461f634) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).
