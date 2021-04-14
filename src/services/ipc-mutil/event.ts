@@ -1,5 +1,4 @@
 import { EventEmitter } from 'events';
-import { Options } from '../updater/common';
 
 type EventEmitterLike = EventEmitter | Electron.EventEmitter
 

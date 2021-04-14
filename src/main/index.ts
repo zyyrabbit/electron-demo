@@ -10,6 +10,8 @@
 import { 
   app, 
   BrowserWindow,
+  globalShortcut,
+  shell
 } from 'electron'
 
 import bootstrap from './bootstrap'
@@ -42,7 +44,7 @@ function createWindow () {
       devTools: true
     },
     frame: false
-  })
+  });
 
   bootstrap(mainWindow)
 
@@ -62,13 +64,31 @@ if (!app.requestSingleInstanceLock()) {
   app.quit()
 }
 
-app.on('ready', createWindow)
+app.on('ready', () => {
+  const Shortcut = {
+    devTools: 'CommandOrControl+Shift+Alt+I',
+    log: 'CommandOrControl+Shift+Alt+O',
+  };
+
+  globalShortcut.register(Shortcut.devTools, () => {
+    let win = BrowserWindow.getFocusedWindow();
+    if (win) {
+      win.webContents.openDevTools();
+    }
+  });
+
+  globalShortcut.register(Shortcut.log, () => {
+    shell.showItemInFolder(app.getPath('userData'));
+  });
+
+  createWindow();
+})
 
 app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
+  //if (process.platform !== 'darwin') {
     app.$log && app.$log.info('[File-sync exit]')
     app.quit()
-  }
+  //}
 })
 
 app.on('activate', () => {
@@ -84,5 +104,10 @@ app.commandLine.appendSwitch('autoplay-policy', 'no-user-gesture-required')
 app.commandLine.appendSwitch('ignore-certificate-errors')
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'   
+
+console.log('chrome', process.versions.chrome);
+
+console.log('apppath', app.getAppPath());
+console.log('userData', app.getPath('userData'));
   
 

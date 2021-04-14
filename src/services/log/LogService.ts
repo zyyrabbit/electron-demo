@@ -5,6 +5,7 @@ import fs from 'fs-extra'
 const serialize = require('serialize-to-js')
 const DAYS = 3
 
+export const IPCLOG = 'IPCLOG';
 export interface LogOption {
   logLevel?: LogLevel, 
   days?: number,
@@ -212,13 +213,17 @@ export class FileLogService extends AbstractLoggerService implements Logger {
 
 
 export class ConsoleLogService extends AbstractLoggerService implements Logger {
-	public constructor (logLevel: LogLevel = LogLevel.Info) {
-		super()
+  private _write: Function
+	public constructor (write: Function, logLevel: LogLevel = LogLevel.Info) {
+    super()
+    this._write = write;
 		this.setLevel(logLevel)
   }
   
   public write(level: string, args: any[]) {
-    console.log(`[${level} ${moment(Date.now()).format('HH:mm:ss')}]`, ...args)
+    // [${level} ${moment(Date.now()).format('HH:mm:ss')}]
+    // @ts-ignore
+    this._write(`${level.toLowerCase()}`, ...args);
   }
 
 	public trace(...args: any[]): void {
@@ -257,7 +262,5 @@ export class ConsoleLogService extends AbstractLoggerService implements Logger {
 		}
 	}
 }
-
-export const defaultConsoleLogService = new ConsoleLogService()
 
 
